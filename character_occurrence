@@ -2,7 +2,7 @@
 Code created on: 16th Oct, 2019 (Google coding interview question - Phone screen round)
 
 This program returns the starting index and ending index of the 
-consecutive repeated characters if the character is repeated more than n times.
+consecutive repeated characters if the character is repeated more thatn n times.
 Here, n is called 'repeat_threshold' and it is provided by the user.
 
 for e.g. input 'Heeeello' for repeat_threshold 2 would return e:[1,4] 
@@ -27,19 +27,16 @@ global repeat_threshold
 #give user a choice to either type out the string on the
 #user prompt or upload a txt file 
 print("\nChoose one of the following options:(type 1 or 2)")
-#user_choice = int(input("""\n1: Enter the string on the prompt\n2: Use your own file\n"""))
 
 
-
+#mechanism to check user entered choice
 while True:
   user_choice = input("""\n1: Enter the string on the prompt\n2: Use your own file\n""")
   if(user_choice == '1'):
     input_string = input("\nEnter the input string:\n")
-    repeat_threshold = int(input("\nEnter the repeat threshold value:\n"))
     break
 
   elif(user_choice == '2'):
-    repeat_threshold = int(input("\nEnter the repeat threshold value:\n"))
     userfile = open("test.txt","r") 
     content = userfile.read()
     break
@@ -47,6 +44,18 @@ while True:
     print("\nPlease type 1 or 2 to select one of the below choices!")
     continue
 
+#mechanism to accept values greater than 0 for repeat threshold
+while True:
+  try:
+    repeat_threshold = int(input("\nEnter the repeat threshold value:\n"))
+  except ValueError:
+    print("\nPlease enter a number greater than 0.")
+    continue
+  if(repeat_threshold <= 0):
+    print("\nPlease enter a number greater than 0.")
+    continue
+  else:
+    break
 #function that takes a string and repeat threshold as parameters
 def char_occ(a,repeat_threshold):
   
@@ -128,7 +137,10 @@ def char_occ(a,repeat_threshold):
       for i in new_dic.keys():
         for x in new_dic[i]:
           new_dic[i] = [tuple(x) for x in new_dic[i]]
-      print(new_dic)
+      #print(new_dic)
+
+      #printing every character and it's index position on the new line
+      print("\n{" + "\n".join("\n{!r}: {!r},".format(k, v) for k, v in new_dic.items()) + "\n}")
         
     #for key,value in zip(char, combine):
     #  print(key,":",value)
