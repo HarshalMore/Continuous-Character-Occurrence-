@@ -31,7 +31,7 @@ print("\nChoose one of the following options:(type 1 or 2)")
 
 #mechanism to check user entered choice
 while True:
-  user_choice = input("""\n1: Enter the string on the prompt\n2: Use your own file\n""")
+  user_choice = input("""\n1: Enter the string on the prompt\n2: Use your own file (Use the text file and keep it in the same directory as this one)\n""")
   if(user_choice == '1'):
     input_string = input("\nEnter the input string:\n")
     break
@@ -147,7 +147,7 @@ def char_occ(a,repeat_threshold):
 
   #if nothing was entered for input string
   else:
-    print("\nnothing was entered")
+    print("\nNothing was entered for input string!")
 
 if(user_choice == '2'):
   #call the function with the content of the file and the repeat threshold value
