@@ -10,7 +10,7 @@ as the letter 'e' is repeated more than twice consecutively. Here 1 is
 the start index of the repeated character(i.e. 'e' in this case) and 
 4 is the end index. 
 similarly, input 'Hiiii, what uppp?' for repeat_threshold 2 would 
-return {i:[(1,4)],p:[(13,15)]}.
+return {i:[(1,4)], p:[(13,15)]}.
 
 This program also provides an option to select your own text file as an
 input. Just make sure that you keep both .py file and .txt file in the same 
