@@ -13,5 +13,5 @@ similarly, input 'Hiiii, what uppp?' for repeat_threshold 2 would
 return i:[1,4] p:[13,15]
 
 This program also provides an option to select your own text file as an
-input. Just make sure that you keep both .py file and txt file in the same 
+input. Just make sure that you keep both .py file and .txt file in the same 
 folder.
