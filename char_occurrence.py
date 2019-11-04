@@ -119,8 +119,8 @@ def char_occ(a,repeat_threshold):
     for i in range(len(char)):
       if char[i] not in new_dic:
         blank.append(combine[i])
-        new_dic[char[i]] = blank.copy()
-        del blank[:]
+        new_dic[char[i]] = blank.copy() 
+        del blank[:] #make blank empty
        
       else:
         new_dic[char[i]].append(combine[i])
@@ -133,6 +133,11 @@ def char_occ(a,repeat_threshold):
         for x in new_dic[i]:
           new_dic[i] = [tuple(x) for x in new_dic[i]]
       #print(new_dic)
+      #for e.g. a = 'aaaatrrraaa' the new_dic will be b = {
+      #                                                     'a': [(0, 3), (8, 10)],
+
+      #                                                     'r': [(5, 7)],
+      #                                                    }
 
       #printing every character and it's index position on the new line
       print("\n{" + "\n".join("\n{!r}: {!r},".format(k, v) for k, v in new_dic.items()) + "\n}")
